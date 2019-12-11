@@ -33,7 +33,7 @@ Then we do base62 encoding ([A-Z, a-z, 0-9]) of the ID. In 7 bytes we can get ov
 
 Since our data is fully placed in RAM, the natural choice is a fast no only sql storage that is completely in RAM - **Redis**.\
 Since we don&apos;t need complex statistical queries with filtering and conditions, we can only stay on Redis.\
-If in the future we need such statistics, then we can additionally use the relational database (for example **PostgreSQL**).\ The data can be transferred from Redis to Postgres periodically by cron jobs (for example once a day).\
+If in the future we need such statistics, then we can additionally use the relational database (for example **PostgreSQL**). The data can be transferred from Redis to Postgres periodically by cron jobs (for example once a day).
 
 ### Ruby framework selection
 
@@ -47,7 +47,7 @@ For background jobs i chose the **Sidekiq**.
 ### How do i find a country by ip
 
 I use gem [maxminddb](https://github.com/yhirose/maxminddb) and [free GeoIP2 database](https://dev.maxmind.com/geoip/geoip2/downloadable/)\
-Country determination by ip occurs in separately background job.
+Country determination by ip occurs in separate background job.
 
 ### What should we do if the data no longer fits in RAM
 
@@ -66,11 +66,14 @@ Despite the fact that I requested the same address, all the operations performed
 >➜  ~ hey -n 20000 http://localhost:4567/c
 
 >Summary:
-Total: 134.3142 secs
-Requests/sec: 148.9046
+
+>Total: 134.3142 secs
+
+>Requests/sec: 148.9046
 
 >Status code distribution:
- [200] 20000 responses
+
+>[200] 20000 responses
 
 ### What did not go well?
 
